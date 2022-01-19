@@ -2,7 +2,7 @@ const performance = window.performance;
 const API = 'https://perfapp-api.herokuapp.com/metrics'
 
 const convertTime = (val) => {
-	return (val / 1000)
+  return (val / 1000)
 }
 
 const getTTFB = () => convertTime(
@@ -25,19 +25,28 @@ const getWindowLoad = () => convertTime(performance.timing.loadEventStart - perf
 
 const getResourcesLoad = () => {
   const resources = performance.getEntriesByType('resource')
-
-  resources.forEach((res) => {
-    console.log("ResourceName and Type ----->", res.name, res.initiatorType)
-    console.log("ResponseTime ----->", convertTime(res.responseEnd - res.responseStart))
-    console.log("RequestTime ----->", convertTime((res.requestStart > 0) ? (res.responseEnd - res.requestStart) : "0"))
-    console.log("FetchResponseTime ----->", convertTime((res.fetchStart > 0) ? (res.responseEnd - res.fetchStart) : "0"))
-    console.log("StartResponseTime ----->", convertTime((res.startTime > 0) ? (res.responseEnd - res.startTime) : "0"))
-  })
+  getMetrics(resources)
   const resourceLoad = resources.reduce(
     (acc, resource) => acc + (resource.responseEnd - resource.startTime), 0
   );
+
   return convertTime(resourceLoad);
 };
+
+const getMetrics = (metrics) => {
+  const data = metrics.map((res) => {
+    return { 
+      name: res.name, 
+      type: res.initiatorType, 
+      responseTime: convertTime(res.responseEnd - res.responseStart), 
+      requestTime: convertTime((res.requestStart > 0) ? (res.responseEnd - res.requestStart) : "0"), 
+      fetchResponseTime: convertTime((res.fetchStart > 0) ? (res.responseEnd - res.fetchStart) : "0"), 
+      startResponseTime: convertTime((res.startTime > 0) ? (res.responseEnd - res.startTime) : "0")
+    }
+  })
+  console.log("metrics", data)
+  window.localStorage.setItem("metrics", data)
+}
 
 const sendData = (body) => {
   fetch(API, {
