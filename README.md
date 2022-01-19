@@ -21,4 +21,9 @@ import perfanalytics from 'mmk-perfanaliytics-js'
 
 const analytics = perfanalytics();
 analytics.start();
+
+metrics add localStorage
+
+const metrics = window.localStorage.getItem("metrics")
+console.log(JSON.parse(metrics))
 ```

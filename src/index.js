@@ -45,7 +45,8 @@ const getMetrics = (metrics) => {
     }
   })
   console.log("metrics", data)
-  window.localStorage.setItem("metrics", data)
+
+  window.localStorage.setItem("metrics", JSON.stringify(data))
 }
 
 const sendData = (body) => {
