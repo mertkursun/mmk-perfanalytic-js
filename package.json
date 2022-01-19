@@ -1,0 +1,28 @@
+{
+  "name": "mmk-perfanaliytics-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "bin": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib"
+  },
+  "keywords": [
+    "npm",
+    "module",
+    "node",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.1",
+    "cross-env": "^7.0.3"
+  }
+}
