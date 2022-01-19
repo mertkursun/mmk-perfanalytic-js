@@ -1,6 +1,6 @@
 {
   "name": "mmk-perfanaliytics-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./lib/index.js",
   "bin": "./lib/index.js",
@@ -24,5 +24,9 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-minify": "^0.5.1",
     "cross-env": "^7.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mertkursun/mmk-perfanalytic-js"
   }
 }
