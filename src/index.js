@@ -50,6 +50,7 @@ const getMetrics = (metrics) => {
 }
 
 const sendData = (body) => {
+  console.log("data", body)
   fetch(API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -75,7 +76,6 @@ const mmkPerfAnalytics = () => ({
         "windowLoad": windowLoadTime,
         "resourceLoad": resourceLoadTime
       }
-      console.log("data", data)
       sendData(data);
     };
   }
