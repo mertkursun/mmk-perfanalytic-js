@@ -1,5 +1,5 @@
 const performance = window.performance;
-const API = 'https://mmk-perf-api.herokuapp.com/measures'
+const API = "https://mmk-perf-api.herokuapp.com/metrics"
 
 const convertTime = (val) => {
   return (val / 1000)
@@ -55,6 +55,17 @@ const sendData = (body) => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
+  })
+  .then((response) => {
+    console.log("response", response)
+    response.json()
+  })
+  .then((responseJson) => {
+    console.log("responseJson", responseJson)
+    return responseJson;
+  })
+  .catch((error) => {
+    console.error(error);
   });
 };
 
