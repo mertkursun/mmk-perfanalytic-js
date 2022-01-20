@@ -73,6 +73,7 @@ const mmkPerfAnalytics = () => ({
         "fcp": FCPTime,
         "domLoad": domLoadTime,
         "windowLoad": windowLoadTime,
+        "resourceLoad": resourceLoadTime
       }
       console.log("data", data)
       sendData(data);
