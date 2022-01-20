@@ -1,5 +1,5 @@
 const performance = window.performance;
-const API = 'https://perfapp-api.herokuapp.com/metrics'
+const API = 'https://mmk-perf-api.herokuapp.com/metrics'
 
 const convertTime = (val) => {
   return (val / 1000)
