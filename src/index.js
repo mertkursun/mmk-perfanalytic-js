@@ -58,11 +58,6 @@ const sendData = (body) => {
   })
   .then((response) => {
     console.log("response", response)
-    response.json()
-  })
-  .then((responseJson) => {
-    console.log("responseJson", responseJson)
-    return responseJson;
   })
   .catch((error) => {
     console.error(error);
