@@ -2,6 +2,12 @@
 
 > Performance analytics script for TTFB, FCP, Dom Load, and Window Load events
 
+The script is attached at the address below.
+
+https://arabuloptik.com/
+
+Enter this address first and the script will run.
+
 ## Install
 
 ```
